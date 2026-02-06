@@ -2,7 +2,7 @@
   "name": "components",
   "version": "1.0.0",
   "description": "",
-  "main": "Chatbot_homescreen.js",
+  "main": "ChatbotHomeScreen.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

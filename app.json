@@ -1,9 +1,7 @@
-
-
 {
   "expo": {
     "name": "insurance_v1.0",
-    "slug": "insurance_v1.0",
+    "slug": "insurance-v1-0",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,7 +13,14 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Allow camera access to capture land photos and documents.",
+        "NSLocationWhenInUseUsageDescription": "GPS location needed for geo-tagging land images.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "GPS location for accurate land mapping.",
+        "NSPhotoLibraryUsageDescription": "Access gallery to upload land documents.",
+        "NSPhotoLibraryAddUsageDescription": "Save captured land photos to gallery."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -23,18 +28,38 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.anonymous.insurance_v1.x0",
-      "usesCleartextTraffic": true,
       "permissions": [
         "INTERNET",
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
         "CAMERA",
         "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE"
+        "WRITE_EXTERNAL_STORAGE",
+        "RECORD_AUDIO"
       ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera for land photos and documents.",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone (optional for video)."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location for accurate land mapping.",
+          "locationAlwaysPermission": "Allow $(PRODUCT_NAME) to use your location even when app is closed."
+        }
+      ],
+      [
+        "expo-image-picker",
+        true
+      ]
+    ]
   }
 }

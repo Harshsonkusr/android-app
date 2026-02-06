@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  SafeAreaView,
   View,
   Text,
   TextInput,
   TouchableOpacity,
-  FlatList,
+  FlatList, 
   StyleSheet,
   Image,
   KeyboardAvoidingView,
@@ -19,6 +18,7 @@ import {
   Dimensions,
   Keyboard,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Picker } from '@react-native-picker/picker';
 import { Audio } from 'expo-av';
@@ -575,12 +575,12 @@ Respond in ${languageName} only:`;
     
     const langResponses = responses[lang] || responses.en;
     
-    const q_lower = q.toLowerCase();
-    if (q_lower.includes('insurance') || q_lower.includes('बीमा') || q_lower.includes('विमा') || q_lower.includes('বীমা') || q_lower.includes('ਬੀਮਾ') || q_lower.includes('காப்பீடு')) {
+    const qLower = q.toLowerCase();
+    if (qLower.includes('insurance') || qLower.includes('बीमा') || qLower.includes('विमा') || qLower.includes('বীমা') || qLower.includes('ਬੀਮਾ') || qLower.includes('காப்பீடு')) {
       return langResponses.insurance;
-    } else if (q_lower.includes('claim') || q_lower.includes('दावा') || q_lower.includes('दाबी') || q_lower.includes('দাবি') || q_lower.includes('ਦਾਅਵਾ') || q_lower.includes('கோர')) {
+    } else if (qLower.includes('claim') || qLower.includes('दावा') || qLower.includes('दाबी') || qLower.includes('দাবি') || qLower.includes('ਦਾਅਵਾ') || qLower.includes('கோர')) {
       return langResponses.claim;
-    } else if (q_lower.includes('document') || q_lower.includes('दस्तावेज') || q_lower.includes('कागदपत्रे') || q_lower.includes('নথি') || q_lower.includes('ਦਸਤਾਵੇਜ਼') || q_lower.includes('ஆவணங்கள்')) {
+    } else if (qLower.includes('document') || qLower.includes('दस्तावेज') || qLower.includes('कागदपत्रे') || qLower.includes('নথি') || qLower.includes('ਦਸਤਾਵੇਜ਼') || qLower.includes('ஆவணங்கள்')) {
       return langResponses.documents;
     }
     return langResponses.default;
