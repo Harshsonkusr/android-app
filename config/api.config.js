@@ -8,8 +8,8 @@ import { Platform } from 'react-native';
 // Configuration for different environments
 const API_CONFIG = {
   // Production Server IP
-  // API_BASE_URL: 'http://103.159.239.34:5000', 
-  API_BASE_URL: 'http://192.168.1.5:5000', 
+  API_BASE_URL: 'http://103.159.239.34', 
+  // API_BASE_URL: 'http://192.168.1.5:5000', 
 
   // Alternative URLs for different scenarios (uncomment and use as needed)
   LOCAL_ANDROID_EMULATOR: 'http://10.0.2.2:5000',  
